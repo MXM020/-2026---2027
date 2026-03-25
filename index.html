@@ -7,81 +7,30 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
     <style>
-        body {
-            font-family: 'Cairo', sans-serif;
-            background-color: #f0f4f8;
-        }
-        .gradient-main {
-            background: linear-gradient(135deg, #0f172a 0%, #1e40af 100%);
-        }
-        .qr-card {
-            background: white;
-            padding: 1.5rem;
-            border-radius: 2rem;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-            border: 8px solid #eff6ff;
-        }
-        .status-badge {
-            background: #facc15;
-            color: #1e3a8a;
-            padding: 0.5rem 1.5rem;
-            border-radius: 9999px;
-            font-weight: 900;
-            display: inline-block;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-        }
-        .ai-container {
-            border: 2px solid #3b82f6;
-            background: #ffffff;
-            transition: all 0.3s ease;
-        }
-        .loading-dots:after {
-            content: ' .';
-            animation: dots 1s steps(5, end) infinite;
-        }
-        @keyframes dots {
-            0%, 20% { content: ' .'; }
-            40% { content: ' ..'; }
-            60% { content: ' ...'; }
-            80%, 100% { content: ''; }
-        }
-        .shimmer {
-            background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
-            background-size: 200% 100%;
-            animation: shimmer 1.5s infinite;
-        }
-        @keyframes shimmer {
-            0% { background-position: 200% 0; }
-            100% { background-position: -200% 0; }
-        }
+        body { font-family: 'Cairo', sans-serif; background-color: #f0f4f8; }
+        .gradient-main { background: linear-gradient(135deg, #0f172a 0%, #1e40af 100%); }
+        .qr-card { background: white; padding: 1.5rem; border-radius: 2rem; box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25); border: 8px solid #eff6ff; }
+        .status-badge { background: #facc15; color: #1e3a8a; padding: 0.5rem 1.5rem; border-radius: 9999px; font-weight: 900; display: inline-block; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); }
+        .ai-container { border: 2px solid #3b82f6; background: #ffffff; transition: all 0.3s ease; }
+        .loading-dots:after { content: ' .'; animation: dots 1s steps(5, end) infinite; }
+        @keyframes dots { 0%, 20% { content: ' .'; } 40% { content: ' ..'; } 60% { content: ' ...'; } 80%, 100% { content: ''; } }
     </style>
 </head>
 <body class="min-h-screen py-10 px-4">
 
     <div class="max-w-4xl mx-auto bg-white rounded-[2.5rem] shadow-2xl overflow-hidden border border-blue-100">
         
-        <!-- Header Section -->
         <div class="gradient-main p-12 text-center text-white relative">
-            <div class="relative z-10">
-                <h1 class="text-4xl md:text-6xl font-black mb-4">مدرسة الرازي الإعدادية</h1>
-                <p class="text-xl md:text-2xl opacity-80 mb-6">نهضة الرازي عتيد - جلجولية</p>
-                <div class="status-badge text-lg md:text-xl">
-                    فتح باب التسجيل للعام الدراسي 2026 - 2027
-                </div>
-            </div>
-            <div class="absolute inset-0 opacity-10 pointer-events-none" style="background-image: radial-gradient(circle at 2px 2px, white 1px, transparent 0); background-size: 30px 30px;"></div>
+            <h1 class="text-4xl md:text-6xl font-black mb-4">مدرسة الرازي الإعدادية</h1>
+            <p class="text-xl md:text-2xl opacity-80 mb-6">نهضة الرازي عتيد - جلجولية</p>
+            <div class="status-badge text-lg md:text-xl">فتح باب التسجيل للعام الدراسي 2026 - 2027</div>
         </div>
 
-        <!-- Main Body -->
         <div class="p-8 md:p-16">
             <div class="flex flex-col md:flex-row items-center gap-12 mb-16">
-                
-                <!-- QR Code Block -->
                 <div class="w-full md:w-1/2 flex flex-col items-center">
                     <div class="qr-card transform transition hover:scale-105 duration-300">
-                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=https://docs.google.com/forms/d/e/1FAIpQLSdAQABozzT62_v7oBI_DR_SefghhlWWNvsureaYp5jSvcUnTA/viewform" 
-                             alt="QR Code Registration" 
-                             class="w-64 h-64">
+                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=https://docs.google.com/forms/d/e/1FAIpQLSdAQABozzT62_v7oBI_DR_SefghhlWWNvsureaYp5jSvcUnTA/viewform" alt="QR Code Registration" class="w-64 h-64">
                     </div>
                     <div class="mt-6 text-center">
                         <p class="text-blue-900 font-black text-xl mb-1">امسح الرمز للتسجيل</p>
@@ -89,21 +38,16 @@
                     </div>
                 </div>
 
-                <!-- Info Block -->
                 <div class="w-full md:w-1/2 space-y-8">
                     <h2 class="text-3xl font-bold text-slate-800 leading-tight">نحو جيل قيادي، مبدع، ومنتمٍ</h2>
-                    <div class="space-y-6 text-gray-600">
-                        <p>نحن في مدرسة الرازي نؤمن بأن كل طالب هو مشروع قائد. انضموا إلينا لتجربة تعليمية فريدة تمزج بين القيم والأدوات الحديثة.</p>
-                        <ul class="space-y-4">
-                            <li class="flex items-center gap-3"><span class="text-blue-600">●</span> بيئة تعليمية تكنولوجية متقدمة</li>
-                            <li class="flex items-center gap-3"><span class="text-blue-600">●</span> برامج تنمية القيادة والتميز</li>
-                            <li class="flex items-center gap-3"><span class="text-blue-600">●</span> دعم تعليمي واجتماعي متكامل</li>
-                        </ul>
-                    </div>
+                    <ul class="space-y-4 text-gray-600">
+                        <li class="flex items-center gap-3"><span class="text-blue-600">●</span> بيئة تعليمية تكنولوجية متقدمة</li>
+                        <li class="flex items-center gap-3"><span class="text-blue-600">●</span> برامج تنمية القيادة والتميز</li>
+                        <li class="flex items-center gap-3"><span class="text-blue-600">●</span> دعم تعليمي واجتماعي متكامل</li>
+                    </ul>
                 </div>
             </div>
 
-            <!-- ✨ Gemini AI Feature Section 1: AI Consultant ✨ -->
             <div class="ai-container rounded-[2rem] p-6 md:p-10 mb-10 shadow-inner bg-blue-50/50">
                 <div class="flex items-center gap-3 mb-6">
                     <div class="bg-blue-600 p-2 rounded-lg text-white">
@@ -112,241 +56,60 @@
                     <h2 class="text-2xl font-black text-blue-900">المستشار الذكي ✨</h2>
                 </div>
                 
-                <p class="text-gray-700 mb-6 font-bold">هل لديك سؤال؟ اسألني هنا واحصل على رد مخصص!</p>
+                <p class="text-gray-700 mb-6 font-bold">هل لديك سؤال عن مدرسة الرازي؟ اسألني هنا!</p>
                 
                 <div class="space-y-4">
-                    <textarea id="aiInput" placeholder="مثلاً: ما هي رؤية مدرسة الرازي؟ أو اطلب نصيحة تعليمية..." 
-                              class="w-full p-4 rounded-2xl border-2 border-blue-200 focus:border-blue-500 outline-none text-gray-800 h-24 resize-none shadow-sm"></textarea>
-                    
-                    <button onclick="askGemini()" id="btnAsk" class="bg-blue-600 text-white px-8 py-3 rounded-xl font-bold hover:bg-blue-700 transition flex items-center gap-2 shadow-lg">
-                        اسأل المستشار ✨
-                    </button>
+                    <textarea id="aiInput" placeholder="اسأل عن التسجيل، الرؤية، أو مميزات المدرسة..." class="w-full p-4 rounded-2xl border-2 border-blue-200 focus:border-blue-500 outline-none text-gray-800 h-24 resize-none shadow-sm"></textarea>
+                    <button onclick="askRazi()" class="bg-blue-600 text-white px-8 py-3 rounded-xl font-bold hover:bg-blue-700 transition shadow-lg">إرسال السؤال ✨</button>
                 </div>
 
                 <div id="aiResponseContainer" class="hidden mt-8 p-6 bg-white rounded-2xl border border-blue-100 shadow-md">
-                    <div id="aiLoading" class="hidden text-blue-600 font-bold loading-dots">جاري التفكير</div>
-                    <div id="aiText" class="text-gray-800 leading-relaxed whitespace-pre-wrap"></div>
-                    <div id="ttsControls" class="hidden mt-4 pt-4 border-t border-gray-100">
-                        <button onclick="playAIResponse()" class="flex items-center gap-2 text-blue-600 font-bold hover:text-blue-800">
-                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"></path></svg>
-                            استمع للإجابة ✨
-                        </button>
-                    </div>
+                    <div id="aiLoading" class="hidden text-blue-600 font-bold loading-dots">جاري تحليل سؤالك</div>
+                    <div id="aiText" class="text-gray-800 leading-relaxed font-bold"></div>
                 </div>
             </div>
 
-            <!-- ✨ Gemini AI Feature Section 2: Student Card Generator (Imagen) ✨ -->
-            <div class="ai-container rounded-[2rem] p-6 md:p-10 mb-16 shadow-inner bg-yellow-50/50 border-yellow-200">
-                <div class="flex items-center gap-3 mb-6">
-                    <div class="bg-yellow-500 p-2 rounded-lg text-white">
-                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/></svg>
-                    </div>
-                    <h2 class="text-2xl font-black text-blue-900">صمم بطاقة طالبك المستقبلية ✨</h2>
-                </div>
-                
-                <p class="text-gray-700 mb-6">أدخل اسم الطالب وهوايته المفضلة لنقوم بتوليد صورة تخيلية له كقائد في مدرسة الرازي!</p>
-                
-                <div class="grid md:grid-cols-2 gap-4 mb-6">
-                    <input type="text" id="studentName" placeholder="اسم الطالب" class="p-4 rounded-xl border-2 border-yellow-200 focus:border-yellow-500 outline-none">
-                    <input type="text" id="studentHobby" placeholder="الهواية (مثلاً: الفضاء، الرسم، البرمجة)" class="p-4 rounded-xl border-2 border-yellow-200 focus:border-yellow-500 outline-none">
-                </div>
-                
-                <button onclick="generateStudentCard()" id="btnGenerate" class="bg-yellow-500 text-blue-900 px-8 py-3 rounded-xl font-bold hover:bg-yellow-600 transition flex items-center gap-2 shadow-lg">
-                    توليد صورة الطالب ✨
-                </button>
-
-                <div id="imageContainer" class="hidden mt-8 flex flex-col items-center">
-                    <div id="imageLoading" class="w-64 h-64 shimmer rounded-2xl mb-4 hidden"></div>
-                    <img id="generatedImage" class="w-full max-w-sm rounded-2xl shadow-2xl border-4 border-white mb-4 hidden" alt="بطاقة الطالب">
-                    <p id="imageStatus" class="text-gray-600 font-bold"></p>
-                </div>
-            </div>
-
-            <!-- CTA Button -->
             <div class="flex flex-col items-center">
-                <a href="https://docs.google.com/forms/d/e/1FAIpQLSdAQABozzT62_v7oBI_DR_SefghhlWWNvsureaYp5jSvcUnTA/viewform" 
-                   target="_blank"
-                   class="group relative inline-flex items-center justify-center px-12 py-5 font-black text-white transition-all duration-200 bg-blue-600 rounded-3xl hover:bg-blue-700 focus:outline-none shadow-xl hover:shadow-blue-200 text-2xl w-full md:w-auto">
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSdAQABozzT62_v7oBI_DR_SefghhlWWNvsureaYp5jSvcUnTA/viewform" target="_blank" class="group relative inline-flex items-center justify-center px-12 py-5 font-black text-white bg-blue-600 rounded-3xl hover:bg-blue-700 shadow-xl text-2xl w-full md:w-auto">
                     رابط التسجيل المباشر
-                    <svg class="w-6 h-6 mr-3 transition-transform group-hover:-translate-x-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 19l-7-7 7-7m8 14l-7-7 7-7"></path></svg>
                 </a>
                 <p class="mt-8 text-gray-400 font-bold tracking-widest uppercase text-sm italic">رازي وأفتخر</p>
             </div>
         </div>
 
-        <!-- Footer -->
         <div class="bg-slate-50 border-t border-gray-100 p-6 text-center text-slate-500 font-bold">
             مدرسة الرازي الإعدادية - جلجولية | نرحب بكم في أسرتنا
         </div>
     </div>
 
     <script>
-        const apiKey = ""; // API Key provided at runtime
-        let lastAIResponseText = "";
-
-        // Helper: Exponential Backoff Fetch
-        async function fetchWithRetry(url, options, maxRetries = 5) {
-            for (let i = 0; i < maxRetries; i++) {
-                try {
-                    const response = await fetch(url, options);
-                    if (response.ok) return await response.json();
-                    if (response.status === 429) throw new Error('Rate limit');
-                    throw new Error(HTTP error! status: ${response.status});
-                } catch (err) {
-                    if (i === maxRetries - 1) throw err;
-                    await new Promise(res => setTimeout(res, Math.pow(2, i) * 1000));
-                }
-            }
-        }
-
-        // --- Feature 1: AI Consultant (Text & TTS) ---
-        async function askGemini() {
-            const input = document.getElementById('aiInput').value.trim();
-            const responseContainer = document.getElementById('aiResponseContainer');
+        function askRazi() {
+            const input = document.getElementById('aiInput').value.trim().toLowerCase();
+            const container = document.getElementById('aiResponseContainer');
             const responseText = document.getElementById('aiText');
-            const loadingIndicator = document.getElementById('aiLoading');
-            const ttsControls = document.getElementById('ttsControls');
+            const loading = document.getElementById('aiLoading');
 
             if (!input) return;
 
-            responseContainer.classList.remove('hidden');
-            loadingIndicator.classList.remove('hidden');
-            ttsControls.classList.add('hidden');
-            responseText.innerText = "";
-
-            const systemPrompt = "أنت مساعد ذكي لمدرسة الرازي الإعدادية (جلجولية). أجب بأسلوب ملهم ومهني. شجع الأهالي على التسجيل للعام 2026-2027. استعمل دائماً جملة 'رازي وأفتخر' في الختام.";
-            
-            try {
-                const url = https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${apiKey};
-                const result = await fetchWithRetry(url, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({
-                        contents: [{ parts: [{ text: input }] }],
-                        systemInstruction: { parts: [{ text: systemPrompt }] }
-                    })
-                });
-
-                const text = result.candidates?.[0]?.content?.parts?.[0]?.text || "نعتذر، لم أتمكن من العثور على إجابة.";
-                responseText.innerText = text;
-                lastAIResponseText = text;
-                ttsControls.classList.remove('hidden');
-            } catch (error) {
-                responseText.innerText = "عذراً، حدث خطأ. يرجى المحاولة لاحقاً.";
-            } finally {
-                loadingIndicator.classList.add('hidden');
-            }
-        }
-
-        async function playAIResponse() {
-            if (!lastAIResponseText) return;
-            const url = https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-tts:generateContent?key=${apiKey};
-            
-            try {
-                const result = await fetchWithRetry(url, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({
-                        contents: [{ parts: [{ text: بصوت ملهم: ${lastAIResponseText} }] }],
-                        generationConfig: {
-                            responseModalities: ["AUDIO"],
-                            speechConfig: { voiceConfig: { prebuiltVoiceConfig: { voiceName: "Kore" } } }
-                        }
-                    })
-                });
-
-                const audioBase64 = result.candidates?.[0]?.content?.parts?.[0]?.inlineData?.data;
-                const mimeType = result.candidates?.[0]?.content?.parts?.[0]?.inlineData?.mimeType;
-                
-                if (audioBase64) {
-                    const sampleRate = parseInt(mimeType.match(/rate=(\d+)/)?.[1] || "24000");
-                    const audioBlob = pcmToWav(audioBase64, sampleRate);
-                    const audioUrl = URL.createObjectURL(audioBlob);
-                    const audio = new Audio(audioUrl);
-                    audio.play();
-                }
-            } catch (err) {
-                console.error("TTS Error:", err);
-            }
-        }
-
-        function pcmToWav(base64Pcm, sampleRate) {
-            const binaryString = atob(base64Pcm);
-            const len = binaryString.length;
-            const buffer = new ArrayBuffer(44 + len);
-            const view = new DataView(buffer);
-
-            const writeString = (offset, string) => {
-                for (let i = 0; i < string.length; i++) {
-                    view.setUint8(offset + i, string.charCodeAt(i));
-                }
-            };
-
-            writeString(0, 'RIFF');
-            view.setUint32(4, 36 + len, true);
-            writeString(8, 'WAVE');
-            writeString(12, 'fmt ');
-            view.setUint32(16, 16, true);
-            view.setUint16(20, 1, true);
-            view.setUint16(22, 1, true);
-            view.setUint32(24, sampleRate, true);
-            view.setUint32(28, sampleRate * 2, true);
-            view.setUint16(32, 2, true);
-            view.setUint16(34, 16, true);
-            writeString(36, 'data');
-            view.setUint32(40, len, true);
-
-            for (let i = 0; i < len; i++) {
-                view.setUint8(44 + i, binaryString.charCodeAt(i));
-            }
-            return new Blob([buffer], { type: 'audio/wav' });
-        }
-
-        // --- Feature 2: Student Card Generator (Imagen 4.0) ---
-        async function generateStudentCard() {
-            const name = document.getElementById('studentName').value.trim();
-            const hobby = document.getElementById('studentHobby').value.trim();
-            const container = document.getElementById('imageContainer');
-            const imgEl = document.getElementById('generatedImage');
-            const loading = document.getElementById('imageLoading');
-            const status = document.getElementById('imageStatus');
-
-            if (!name || !hobby) {
-                alert("يرجى إدخال اسم الطالب وهوايته.");
-                return;
-            }
-
             container.classList.remove('hidden');
             loading.classList.remove('hidden');
-            imgEl.classList.add('hidden');
-            status.innerText = "جاري تصميم بطاقة الطالب المبدعة...";
+            responseText.innerText = "";
 
-            const prompt = A cinematic, high-quality 3D digital illustration of a student named ${name} who loves ${hobby}. The student is wearing a school uniform with a blue badge, standing heroically in a modern, high-tech school hallway of "Al-Razi School". The atmosphere is inspiring and futuristic. No text on image except possibly school logo vibes.;
-
-            try {
-                const url = https://generativelanguage.googleapis.com/v1beta/models/imagen-4.0-generate-001:predict?key=${apiKey};
-                const result = await fetchWithRetry(url, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({
-                        instances: [{ prompt: prompt }],
-                        parameters: { sampleCount: 1 }
-                    })
-                });
-
-                const base64 = result.predictions?.[0]?.bytesBase64Encoded;
-                if (base64) {
-                    imgEl.src = data:image/png;base64,${base64};
-                    imgEl.classList.remove('hidden');
-                    status.innerText = بطاقة الطالب ${name} جاهزة! ✨;
-                } else {
-                    throw new Error("No image generated");
-                }
-            } catch (error) {
-                status.innerText = "عذراً، لم نتمكن من توليد الصورة حالياً.";
-            } finally {
+            setTimeout(() => {
                 loading.classList.add('hidden');
-            }
+                
+                if (input.includes("تسجيل") || input.includes("متى") || input.includes("موعد")) {
+                    responseText.innerText = "التسجيل للعام الدراسي 2026-2027 متاح الآن! يمكنك الضغط على زر التسجيل المباشر أو مسح الرمز بالهاتف. رازي وأفتخر!";
+                } else if (input.includes("رؤية") || input.includes("روية") || input.includes("هدف")) {
+                    responseText.innerText = "رؤيتنا في مدرسة الرازي هي تنشئة جيل قيادي ومبدع، مسلح بأحدث الوسائل التكنولوجية والقيم التربوية العالية. رازي وأفتخر!";
+                } else if (input.includes("الرازي") || input.includes("رازي") || input.includes("مدرسة")) {
+                    responseText.innerText = "مدرسة الرازي الإعدادية في جلجولية هي بيت دافئ لطلابنا، نتميز ببرامج القيادة والبيئة التعليمية المتطورة. رازي وأفتخر!";
+                } else if (input.includes("تكنولوجيا") || input.includes("حاسوب") || input.includes("برمجة")) {
+                    responseText.innerText = "نفتخر بكوننا مدرسة ذكية توفر أدوات تكنولوجية متقدمة وبرامج تميز لطلابنا المبدعين. رازي وأفتخر!";
+                } else {
+                    responseText.innerText = "أهلاً بك في رحاب مدرسة الرازي! نحن هنا لدعم مستقبل طالبنا. يرجى ملء طلب التسجيل وسنتواصل معك قريباً. رازي وأفتخر!";
+                }
+            }, 900);
         }
     </script>
 </body>
